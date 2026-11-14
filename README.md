@@ -21,4 +21,4 @@ If Supabase is not configured, scores are saved locally in the current browser i
 
 ## Deploy to GitHub Pages
 
-The GitHub Actions workflow builds and deploys this Vite app to `https://aratamipizda.github.io/tellnojeffrey/` when changes are pushed to `main`. In the repository's **Settings → Pages**, set the build and deployment source to **GitHub Actions**. Add the Actions repository secrets `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` (or `VITE_SUPABASE_ANON_KEY`) for the online leaderboard to work on the deployed site. These values are intentionally not committed to the repository.
+The GitHub Actions workflow builds and deploys this Vite app to `https://lukaz6769.github.io/tellnojeffrey/` when changes are pushed to `main`. In the repository's **Settings → Pages**, set the build and deployment source to **GitHub Actions**. Add the Actions repository secrets `VITE_SUPABASE_URL` and either `VITE_SUPABASE_PUBLISHABLE_KEY` or `VITE_SUPABASE_ANON_KEY` for the online leaderboard to work on the deployed site. These values are intentionally not committed to the repository.
