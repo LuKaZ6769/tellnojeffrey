@@ -1,0 +1,72 @@
+.flappy-page{--ink:#293b3b;--muted:#718783;--accent:#ee9365;position:relative;display:grid;min-height:100vh;place-items:center;overflow:hidden;padding:32px 32px 32px 320px;background:radial-gradient(ellipse at 50% 30%,#e0f6e8 0,#c6e8d8 36%,#a7d1c5 100%);color:var(--ink);font-family:"DM Sans",sans-serif}
+.flappy-page:before,.flappy-page:after{position:absolute;content:"";pointer-events:none;border:1px solid #fff8;border-radius:50%}
+.flappy-page:before{width:900px;height:900px;top:-600px;right:-340px}
+.flappy-page:after{width:620px;height:620px;bottom:-475px;left:-180px}
+.flappy-leaderboard{position:absolute;z-index:2;top:26px;left:28px;width:272px;padding:19px 18px 14px;border:1px solid #ffffffa8;border-radius:20px;background:#f8fffbdb;box-shadow:0 12px 38px #477e6522;backdrop-filter:blur(14px)}
+.leaderboard-heading{display:flex;align-items:center;gap:11px;padding-bottom:15px;border-bottom:1px solid #244e3b13}
+.leaderboard-icon{display:grid;place-items:center;width:37px;height:37px;border-radius:12px;background:#e6f4e9;color:#50815c;font-size:19px}
+.leaderboard-heading>div{flex:1}
+.leaderboard-heading p,.overlay-kicker{margin:0 0 3px;color:#8aa096;font-size:8px;font-weight:800;letter-spacing:1.55px}
+.leaderboard-heading h2{margin:0;color:#304c43;font:700 15px/1.2 Manrope,sans-serif;letter-spacing:-.3px}
+.leaderboard-live{width:7px;height:7px;border-radius:50%;background:#dfaa75;box-shadow:0 0 0 4px #dfaa751d}
+.leaderboard-live.online{background:#64b77a;box-shadow:0 0 0 4px #64b77a1d}
+.leaderboard-list{display:grid;gap:2px;padding:9px 0 4px}
+.leaderboard-row{display:flex;align-items:center;gap:9px;min-height:32px;padding:0 4px;color:#556b64;font-size:11px}
+.leaderboard-first{color:#bc7b42}
+.leaderboard-rank{width:20px;color:#9aaba3;font:700 9px Manrope,sans-serif}
+.leaderboard-first .leaderboard-rank{color:#d39a55}
+.leaderboard-name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
+.leaderboard-row strong{color:#354e46;font-size:11px;font-variant-numeric:tabular-nums}
+.leaderboard-note{margin:8px 3px 11px;color:#8a9b94;font-size:10px}
+.leaderboard-caption{margin:5px 3px 0;color:#a1afa8;font-size:8px;letter-spacing:.35px}
+.game-error{margin:9px 0 0;color:#a33e36;font-size:10px;line-height:1.45}
+.flappy-game{position:relative;z-index:1;display:grid;width:min(100%,520px);justify-items:center}
+.game-header{display:flex;width:100%;align-items:center;justify-content:space-between;margin-bottom:16px}
+.game-brand{display:flex;align-items:center;gap:8px;color:#304d43;font:800 13px Manrope,sans-serif;letter-spacing:1px}
+.game-brand>span:last-child>span{color:#8eaa96;font-weight:600}
+.game-brand-mark{display:grid;place-items:center;width:27px;height:27px;border:1px solid #ffffffad;border-radius:9px;background:#f7fff5a8;color:#e89763;font-size:15px}
+.game-pill{display:flex;align-items:center;gap:7px;padding:7px 10px;border:1px solid #ffffffa3;border-radius:30px;background:#f4fff88c;color:#6b8c7c;font-size:8px;font-weight:700;letter-spacing:.8px}
+.game-pill i{width:6px;height:6px;border-radius:50%;background:#6ebd82;box-shadow:0 0 8px #6ebd8288}
+.game-title{text-align:center;margin:0 0 18px}
+.game-title>span{color:#7b9b8c;font-size:8px;font-weight:800;letter-spacing:2px}
+.game-title h1{margin:5px 0;color:#2d4d43;font:800 clamp(32px,5vw,41px)/1.08 Manrope,sans-serif;letter-spacing:-2px}
+.game-title h1 em{color:#e98b5e;font-style:normal}
+.game-title p{margin:0;color:#718d82;font-size:11px}
+.game-board{position:relative;width:min(100%,480px,57vh);overflow:hidden;border:7px solid #f7fff2;border-radius:24px;background:#c9ebdc;box-shadow:0 24px 70px #43765b35,0 5px 12px #47775b19}
+.game-canvas{display:block;width:100%;height:auto;aspect-ratio:3/4;touch-action:manipulation}
+.game-overlay{position:absolute;inset:0;display:grid;place-items:center;padding:20px;background:#264d473d;backdrop-filter:blur(2px)}
+.overlay-card{width:min(100%,310px);padding:25px 24px 23px;border:1px solid #ffffffc9;border-radius:20px;background:#f9fff4ed;box-shadow:0 13px 36px #30594828;text-align:center;animation:overlay-rise .28s ease both}
+@keyframes overlay-rise{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.overlay-emoji{display:grid;place-items:center;width:52px;height:52px;margin:0 auto 13px;border-radius:17px;background:#eaf5e3;font-size:25px}
+.overlay-card h2{margin:5px 0 7px;color:#304c43;font:750 22px/1.24 Manrope,sans-serif;letter-spacing:-.7px}
+.overlay-card>p:not(.overlay-kicker){margin:0;color:#81958c;font-size:10px;line-height:1.6}
+.play-button,.save-button{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:10px;background:#e99a68;color:#fffdf5;font-size:11px;font-weight:700;box-shadow:0 5px 12px #d9815333;transition:transform .18s,background .18s}
+.play-button{min-width:145px;margin-top:18px;padding:11px 15px}
+.play-button:hover,.save-button:hover:not(:disabled){transform:translateY(-1px);background:#dd8454}
+.play-button span,.play-again-button span{font-size:15px}
+.game-instructions{display:flex;align-items:center;gap:11px;margin-top:13px;color:#738e82;font-size:9px}
+.game-instructions>i{width:3px;height:3px;border-radius:50%;background:#a2b9ab}
+.game-instructions kbd{padding:3px 5px;border:1px solid #ffffffbd;border-radius:5px;background:#f5fff4a8;color:#688477;font:700 8px Manrope,sans-serif}
+.game-over-card{padding:21px 22px 18px}
+.game-over-card .overlay-emoji{width:42px;height:42px;margin-bottom:9px;border-radius:14px;font-size:20px}
+.game-over-card h2{font-size:21px}
+.final-score{display:grid;gap:0;margin:13px 0;padding:10px;border-radius:11px;background:#edf6e9}
+.final-score span{color:#87a092;font-size:8px;font-weight:800;letter-spacing:1px}
+.final-score strong{color:#385b4c;font:800 25px Manrope,sans-serif}
+.score-form{text-align:left}
+.score-form label{display:block;margin-bottom:6px;color:#6f897d;font-size:9px;font-weight:700}
+.score-input-row{display:flex;gap:7px}
+.score-input-row input{min-width:0;flex:1;height:37px;padding:0 10px;border:1px solid #dce9dc;border-radius:9px;outline:none;background:#fffefa;color:#40584f;font-size:10px}
+.score-input-row input:focus{border-color:#8fbd9a;box-shadow:0 0 0 3px #8fbd9a22}
+.score-input-row input::placeholder{color:#b1beb4}
+.save-button{flex:none;padding:0 11px;font-size:9px}
+.save-button:disabled{cursor:not-allowed;opacity:.5}
+.saved-message{padding:11px 5px;color:#4f9a66;font-size:10px;font-weight:700}
+.play-again-button{margin-top:11px;padding:7px 12px;border:1px solid #b5cbbb;border-radius:8px;background:transparent;color:#688777;font-size:9px;font-weight:700}
+.play-again-button:hover{border-color:#7da78a;background:#edf6e9}
+.game-decoration{position:absolute;color:#fff9;font-size:23px}
+.game-decoration-one{top:25%;right:12%}
+.game-decoration-two{bottom:22%;left:13%;font-size:31px}
+@media(max-width:900px){.flappy-page{align-content:start;justify-items:center;gap:0;padding:20px 20px 25px}.flappy-leaderboard{position:relative;top:auto;left:auto;width:min(100%,480px);margin-bottom:20px;padding:13px 15px 10px}.leaderboard-heading{padding-bottom:10px}.leaderboard-icon{width:31px;height:31px}.leaderboard-heading p{font-size:7px}.leaderboard-heading h2{font-size:13px}.leaderboard-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 8px;padding:7px 0 2px}.leaderboard-row{min-height:27px}.leaderboard-note{grid-column:1/-1;margin:7px 3px}.leaderboard-caption{font-size:7px}.game-header{margin-bottom:12px}.game-title{margin-bottom:13px}.game-title h1{font-size:34px}.game-decoration-one{top:42%;right:3%}.game-decoration-two{bottom:8%;left:4%}}
+@media(max-width:480px){.flappy-page{padding:14px 12px 20px}.flappy-leaderboard{margin-bottom:16px;border-radius:15px}.leaderboard-list{grid-template-columns:1fr}.leaderboard-row:nth-child(n+5){display:none}.flappy-game{width:100%}.game-header{padding:0 3px}.game-board{border-width:5px;border-radius:19px}.overlay-card{padding:21px 19px}.game-title h1{font-size:32px}.game-instructions{font-size:8px}.game-decoration{display:none}}
+@media(prefers-reduced-motion:reduce){.overlay-card{animation:none}}

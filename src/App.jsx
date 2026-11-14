@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import { Link, NavLink, Navigate, Outlet, Route, Routes, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
+import FlappyBird from './FlappyBird.jsx'
 import {
   ArrowLeft, ArrowRight, Bell, Bookmark, Check, ChevronDown, CircleHelp,
   Flame, Heart, Home, LockKeyhole, LogOut, Menu, MessageCircle, Moon,
@@ -8,7 +9,8 @@ import {
 } from 'lucide-react'
 
 const isSupabaseConfigured = Boolean(
-  import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
+  import.meta.env.VITE_SUPABASE_URL
+    && (import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || import.meta.env.VITE_SUPABASE_ANON_KEY),
 )
 const AppContext = createContext(null)
 const AuthContext = createContext(null)
@@ -140,7 +142,8 @@ function App() {
         onLike: () => {}, onBookmark: () => {}, onReact: () => {}, onComment: () => {},
       }}>
         <Routes>
-          <Route path="/" element={<Landing />} />
+          <Route path="/" element={<FlappyBird />} />
+          <Route path="/community" element={<Landing />} />
           <Route path="/login" element={<AuthPage mode="login" />} />
           <Route path="/signup" element={<AuthPage mode="signup" />} />
           <Route element={<RequireAuth />}>
@@ -152,7 +155,7 @@ function App() {
               <Route path="/profile/:handle" element={<ProfilePage />} />
             </Route>
           </Route>
-          <Route path="*" element={<Landing />} />
+          <Route path="*" element={<FlappyBird />} />
         </Routes>
         <ConfessionModal open={modalOpen} onClose={() => setModalOpen(false)} onSubmit={createPost} />
         <AnimatePresence>
